@@ -48,6 +48,10 @@ window.onload = () => {
     });
   });
 
+  // just-1day 지난시간 퍼센트 계산 후 보여주기
+  let percent = Math.floor((new Date().getHours() / 24) * 100);
+  document.querySelector('.timeline span').style.width = `${percent}%`;
+
   // just-1day 남은시간 계산 1초마다 반복
   setInterval(setCountdown, 100);
 };
