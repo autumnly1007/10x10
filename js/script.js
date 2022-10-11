@@ -47,6 +47,9 @@ window.onload = () => {
       setBanner('pagination', idx);
     });
   });
+
+  // just-1day 남은시간 계산 1초마다 반복
+  setInterval(setCountdown, 100);
 };
 
 // 배너 셋팅하기
@@ -87,7 +90,26 @@ function changePagination() {
   });
 
   // 페이지네이션 active
-  document
-    .querySelector(`.banner__pagination ul li:nth-child(${bannerIdx}) a`)
-    .classList.add('active');
+  document.querySelector(`.banner__pagination ul li:nth-child(${bannerIdx}) a`).classList.add('active');
+}
+
+// 남은 시간 카운트하기
+function setCountdown() {
+  let date = new Date();
+  let hour = 24 - date.getHours(); // 24시 => 00시
+  let min = 60 - date.getMinutes(); // 60분 => 00분
+  let sec = 60 - date.getSeconds(); // 60초 => 00초
+
+  // 60분일 경우 0분으로 바꿔주고 아닐경우 시간에서 1 빼주기
+  min === 60 ? (min = 0) : hour--;
+
+  // 60초일 경우 0초로 바꿔주고 아닐경우 분에서 1 빼주기
+  sec === 60 ? (sec = 0) : min--;
+
+  // 한자리 수일 경우 0 붙여주기
+  if ((hour + '').length === 1) hour = '0' + hour;
+  if ((min + '').length === 1) min = '0' + min;
+  if ((sec + '').length === 1) sec = '0' + sec;
+
+  document.querySelector('.countdown').innerHTML = `${hour}:${min}:${sec}`;
 }

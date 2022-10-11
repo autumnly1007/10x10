@@ -10,11 +10,9 @@
     />
     <title>텐바이텐 10X10 : 감성채널 감성에너지</title>
     <!-- reset.css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/data.js"></script>
     <script src="/js/script.js"></script>
   </head>
   <body>
@@ -117,7 +115,7 @@
 
       <!-- nav -->
       <nav class="nav">
-        <div class="nav__inner">
+        <div class="nav__gnb">
           <ul>
             <li>
               <a href=""><span>디자인문구</span></a>
@@ -169,7 +167,16 @@
             </li>
           </ul>
         </div>
-        <div class="nav__sub"></div>
+        <div class="nav__lnb">
+          <!-- 디자인문구 -->
+          <div class="lnb__category">
+            <div class="lnb__column">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </nav>
 
       <!-- main -->
@@ -188,8 +195,7 @@
                     </p>
                   </div>
                   <p class="banner__desc">
-                    일상에 작은 행복을 더해주는 버터샵, 런칭 혜택을 텐바이텐에서
-                    만나보세요!
+                    일상에 작은 행복을 더해주는 버터샵, 런칭 혜택을 텐바이텐에서 만나보세요!
                   </p>
                 </div>
               </a>
@@ -301,12 +307,8 @@
               <div class="banner__right"></div>
             </div>
           </div>
-          <a class="banner__prev" href="javascript:void(0);" title="previous"
-            >previous</a
-          >
-          <a class="banner__next" href="javascript:void(0);" title="next"
-            >next</a
-          >
+          <a class="banner__prev" href="javascript:void(0);" title="previous">previous</a>
+          <a class="banner__next" href="javascript:void(0);" title="next">next</a>
           <div class="banner__pagination">
             <ul>
               <li><a href="javascript:void(0);">1</a></li>
@@ -324,7 +326,21 @@
 
         <!-- just 1 day sale -->
         <div class="just-1day">
-          <div class="inner"></div>
+          <div class="inner">
+            <!-- left -->
+            <div class="just-1day__left">
+              <h2>
+                <img src="/imgs/tit_special_21st.png" alt="텐텐세일에 만나는 오늘의 특가" />
+              </h2>
+              <p class="sale"><strong>~44% </strong>SALE</p>
+              <div class="timeline">
+                <span><em></em></span>
+              </div>
+              <p class="timetext">남은시간 <span class="countdown">11:28:55</span></p>
+            </div>
+            <!-- items -->
+            <div class="just-1day__items"></div>
+          </div>
         </div>
         <!-- items-3 -->
         <div class="items-3">
