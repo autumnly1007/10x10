@@ -232,22 +232,23 @@ button {
   background-color: #fff;
 }
 
-.nav__inner {
+/* nav__gnb */
+.nav__gnb {
   width: 1160px;
   height: 45px;
   margin: 0 auto;
 }
 
-.nav__inner ul {
+.nav__gnb ul {
   display: flex;
   align-items: center;
 }
 
-.nav__inner ul .line {
+.nav__gnb ul .line {
   cursor: default;
 }
 
-.nav__inner ul .line span {
+.nav__gnb ul .line span {
   display: block;
   width: 1px;
   height: 7px;
@@ -256,25 +257,25 @@ button {
   background-color: #ccc;
 }
 
-.nav__inner ul li {
+.nav__gnb ul li {
   flex-grow: 1;
   text-align: center;
   cursor: pointer;
 }
 
-.nav__inner ul li a {
+.nav__gnb ul li a {
   color: #000;
   font-size: 13px;
   line-height: 45px;
   position: relative;
 }
 
-.nav__inner ul li:hover > a {
+.nav__gnb ul li:hover > a {
   color: #ff3131;
 }
 
 /* 강조 */
-.nav__inner ul .hot a::after {
+.nav__gnb ul .hot a::after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -284,6 +285,21 @@ button {
   height: 4px;
   background-color: #ff3131;
   border-radius: 50%;
+}
+
+/* nav__lnb */
+.nav__lnb {
+
+}
+
+.lnb__category {
+  border: 0;
+  border-top: 1px solid #f5f5f5;
+  box-shadow: none;
+}
+
+.lnb__column {
+
 }
 
 /* main */
@@ -308,13 +324,20 @@ button {
   height: 100%;
   background-position: 50%;
   background-repeat: no-repeat;
-  display: none;
   opacity: 0;
   position: absolute;
+  transition: all 2s ease;
 }
 
 .banner__img:nth-child(1) {
-  display: block;
+  opacity: 1;
+}
+
+.banner__img.hide {
+  opacity: 0;
+}
+
+.banner__img.show {
   opacity: 1;
 }
 
@@ -486,6 +509,10 @@ button {
   background-color: rgba(255, 255, 255, .4);
   color: transparent;
   border-radius: 50%;
+}
+
+.banner__pagination ul li a.active {
+  background-color: #fff;
 }
 
 .footer {
