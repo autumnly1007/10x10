@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+/* reset */
 body {
   font-size: 12px;
   font-family: 'Core Sans C',
@@ -26,6 +27,20 @@ input {
 button {
   margin: 0;
   padding: 0;
+}
+
+/* common */
+
+.red {
+  color: #ff3131 !important;
+}
+
+.blue {
+  color: #3f75ff !important;
+}
+
+.green {
+  color: #00b160 !important;
 }
 
 .container {
@@ -744,6 +759,8 @@ button {
 .md-pick .inner {
   width: 1140px;
   display: flex;
+  padding-bottom: 40px;
+  background: url(/imgs/bg_pattern_line.png) 0 100% repeat-x;
 }
 
 .md-pick__left {
@@ -781,12 +798,14 @@ button {
 
 .md-pick__left .list-tag {
   padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .md-pick__left .list-tag li a {
   display: inline-block;
   height: 24px;
-  margin-bottom: 10px;
   padding: 0 10px;
   color: #000;
   background-color: #eee;
@@ -840,15 +859,6 @@ button {
   font-size: 10px;
 }
 
-/* common */
-.blue {
-  color: #3f75ff !important;
-}
-
-.green {
-  color: #00b160 !important;
-}
-
 .thumb::after {
   content: '';
   display: inline-block;
@@ -858,6 +868,79 @@ button {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .02);
+}
+
+/* exhibition */
+.exhibition {
+  display: flex;
+  justify-content: center;
+}
+
+.exhibition .inner {
+  width: 1140px;
+  margin: 80px 0;
+}
+
+.exhibition ul {
+  display: grid;
+  grid-template-columns: repeat(2, 550px);
+  justify-content: space-between;
+  row-gap: 54px;
+}
+
+.exhibition ul li {
+  width: 550px;
+  position: relative;
+}
+
+.exhibition ul li .thumb {
+  position: relative;
+}
+
+.exhibition ul li .thumb::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .04);
+  z-index: 10;
+}
+
+.exhibition ul li .thumb img {
+  width: 100%;
+}
+
+.exhibition ul li .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.exhibition ul li .text {
+  font-size: 18px;
+  line-height: 23px;
+  color: #000;
+}
+
+.exhibition ul li .text .text__main {
+  margin-top: 8px;
+  
+}
+
+.exhibition ul li .text .title {
+  font-weight: 500;
+}
+
+.exhibition ul li .text .discount {
+  font-weight: bold;
+}
+
+.exhibition ul li .text .text__sub {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .footer {
