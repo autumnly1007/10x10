@@ -54,6 +54,21 @@ window.onload = () => {
 
   // just-1day 남은시간 계산 1초마다 반복
   setInterval(setCountdown, 100);
+
+  // cart-item 탭 마우스 오버 이벤트
+  let cartItemTab = document.querySelectorAll('.cart-item .tab-nav__list li a');
+  cartItemTab.forEach((item, idx) => {
+    item.addEventListener('mouseover', () => {
+      // 탭 리스트 active toggle
+      document.querySelectorAll(`.cart-item .tab-nav__list li`).forEach((item, idx) => {
+        item.classList.toggle('active');
+      });
+      // 탭 아이템 active toggle
+      document.querySelectorAll(`.cart-item .tab-container > div`).forEach((item, idx) => {
+        item.classList.toggle('active');
+      });
+    });
+  });
 };
 
 // 배너 셋팅하기
