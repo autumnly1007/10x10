@@ -1361,6 +1361,118 @@ b {
   color: #666;
 }
 
+/* best-brand */
+.best-brand {
+  display: flex;
+  justify-content: center;
+}
+
+.best-brand .inner {
+  width: 1140px;
+  height: 480px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.best-brand .inner .left {
+  width: 300px;
+  height: 360px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.best-brand .inner .left h2 {
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+.best-brand .inner .left h2 strong {
+  font-weight: 800;
+}
+
+.best-brand .inner .left a {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.best-brand .inner .left a:hover {
+  text-decoration: underline;
+}
+
+.best-brand .inner .left a span {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  width: 4px;
+  height: 6px;
+  background: url(//fiximage.10x10.co.kr/web2018/common/arrow_right.png?v=1.1) 0 0 no-repeat;
+  background-position: -28px 0;
+  margin-left: 4px;
+}
+
+.best-brand .inner .right ul {
+  display: flex;
+  gap: 40px;
+}
+
+.best-brand .inner .right ul li {
+  position: relative;
+}
+
+.best-brand .inner .right ul li .thumb img {
+  width: 260px;
+  height: 360px;
+}
+
+.best-brand .inner .right ul li .desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 360px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .6);
+  transition: all .3s;
+  opacity: 0;
+}
+
+.best-brand .inner .right ul li:hover .desc {
+  opacity: 1;
+}
+
+.best-brand .inner .right ul li .desc p {
+  font-weight: bold;
+}
+
+.best-brand .inner .right ul li .desc .title {
+  font-size: 20px;
+}
+
+.best-brand .inner .right ul li .desc .sub {
+  font-size: 12px;
+  position: relative;
+}
+
+.best-brand .inner .right ul li .desc .sub::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  width: 6px;
+  height: 1px;
+  background-color: #fff;
+}
+
 .footer {
 }
 
