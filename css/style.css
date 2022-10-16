@@ -1091,6 +1091,276 @@ b {
   display: none;
 }
 
+/* only-brand */
+.only-brand {
+  display: flex;
+  justify-content: center;
+}
+
+.only-brand .inner {
+  width: 1140px;
+  height: 700px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.only-brand .inner .div-bar {
+  display: inline-block;
+  width: 1px;
+  height: 540px;
+  background-color: #eee;
+}
+
+.only-brand .inner .left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 490px;
+}
+
+.only-brand .inner .left .left__head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.only-brand .inner .left .left__head .left__title {
+  color: #000;
+  font-size: 32px;
+}
+
+.only-brand .inner .left .left__head .left__title strong {
+  font-weight: 800;
+}
+
+.only-brand .inner .left .left__head .tab-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.only-brand .inner .left .left__head .tab-list li a {
+  color: #666;
+  padding: 8px 0;
+}
+
+.only-brand .inner .left .left__head .tab-list li.active a {
+  color: #000;
+  font-weight: bold;
+  border-bottom: 4px solid #4075ff;
+}
+
+.only-brand .inner .left .left__items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  display: none;
+}
+
+.only-brand .inner .left .left__items.active {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.only-brand .inner .left .left__items .main-item {
+  width: 100%;
+}
+
+.only-brand .inner .left .left__items .sub-item ul {
+  display: flex;
+  gap: 20px;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li {
+  width: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li .thumb {
+  width: 100%;
+  position: relative;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li .thumb .discount {
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 60px;
+  height: 16px;
+  padding-top: 44px;
+  color: #fff !important;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  background: #ff3131;
+  transform: rotate(45deg);
+  transition: all .2s;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li:hover .thumb .discount {
+  right: -60px;
+  top: -60px;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li .thumb img {
+  width: 100%;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li .desc {
+  position: absolute;
+  left: 0;
+  bottom: -54px;
+  z-index: 10;
+  width: 100%;
+  height: 38px;
+  padding: 6px 0 8px 0;
+  color: #fff;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, .6);
+  transition: all .2s;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li .desc .title {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li .desc .info {
+  padding: 0 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.only-brand .inner .left .left__items .sub-item ul li:hover .desc {
+  bottom: 0;
+}
+
+.only-brand .inner .right img {
+  width: 540px;
+  height: 540px;
+}
+
+/* brand-exhibition */
+.brand-exhibition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/imgs/bg_color_bar.png) 0 0 repeat-x;
+  background-color: #FBD65C;
+}
+
+.brand-exhibition .inner {
+  width: 1140px;
+  height: 600px;
+  background: url(/imgs/bg_pattern_line.png) 0 100% repeat-x;
+  display: flex;
+  align-items: center;
+}
+
+.brand-exhibition .inner .thumb-main {
+  width: 440px;
+  height: 440px;
+  box-shadow: 8px 8px 16px 0 rgb(0 0 0 / 10%);
+}
+
+.brand-exhibition .inner .thumb-main img {
+  width: 440px;
+  height: 440px;
+}
+
+.brand-exhibition .inner .thumb-sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40px;
+  height: 440px;
+}
+
+.brand-exhibition .inner .thumb-text {
+  color: #000;
+}
+
+.brand-exhibition .inner .thumb-text h2 {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.brand-exhibition .inner .thumb-text p {
+  font-size: 13px;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul {
+  display: flex;
+  gap: 20px;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li .thumb {
+  position: relative;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li .thumb img {
+  width: 150px;
+  height: 150px;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li .desc {
+  display: flex;
+  gap: 6px;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li .desc .price {
+  color: #333;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li button {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li button i {
+  position: absolute;
+  left: 50%;
+  top: 58px;
+  width: 15px;
+  height: 15px;
+  margin-left: -8px;
+  background-image: url(/imgs/sp_icon.png);
+  background-position: 0 -215px;
+  transform: rotate(0deg);
+  transition: all .3s;
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li button:hover i {
+  transform: rotate(90deg);
+}
+
+.brand-exhibition .inner .thumb-sub .thumb-items ul li button span {
+  display: inline-block;
+  padding-top: 30px;
+  font-size: 11px;
+  color: #666;
+}
+
 .footer {
 }
 
