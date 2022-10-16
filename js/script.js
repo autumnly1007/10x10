@@ -69,6 +69,21 @@ window.onload = () => {
       });
     });
   });
+
+  // only-brand 탭 마우스 오버 이벤트
+  let onlyBrandTab = document.querySelectorAll('.only-brand .tab-list li a');
+  onlyBrandTab.forEach((item, idx) => {
+    item.addEventListener('mouseover', () => {
+      // 탭 리스트 active toggle
+      document.querySelectorAll(`.only-brand .tab-list li`).forEach((item, idx) => {
+        item.classList.toggle('active');
+      });
+      // 탭 아이템 active toggle
+      document.querySelectorAll(`.only-brand .left__items`).forEach((item, idx) => {
+        item.classList.toggle('active');
+      });
+    });
+  });
 };
 
 // 배너 셋팅하기
