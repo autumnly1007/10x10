@@ -56,11 +56,11 @@ window.onload = () => {
   setInterval(setCountdown, 100);
 
   // cart-item 탭 마우스 오버 이벤트
-  let cartItemTab = document.querySelectorAll('.cart-item .tab-nav__list li a');
+  let cartItemTab = document.querySelectorAll('.cart-item .tab-list li a');
   cartItemTab.forEach((item, idx) => {
     item.addEventListener('mouseover', () => {
       // 탭 리스트 active toggle
-      document.querySelectorAll(`.cart-item .tab-nav__list li`).forEach((item, idx) => {
+      document.querySelectorAll(`.cart-item .tab-list li`).forEach((item, idx) => {
         item.classList.toggle('active');
       });
       // 탭 아이템 active toggle
