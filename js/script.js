@@ -26,21 +26,21 @@ window.onload = () => {
   }, 4500);
 
   // 배너 왼쪽 버튼 클릭 이벤트
-  let btnPrev = document.querySelector('.banner__prev');
+  const btnPrev = document.querySelector('.banner__prev');
   btnPrev.addEventListener('click', () => {
     // 배너 셋팅
     setBanner('left');
   });
 
   // 배너 오른쪽 버튼 클릭 이벤트
-  let btnNext = document.querySelector('.banner__next');
+  const btnNext = document.querySelector('.banner__next');
   btnNext.addEventListener('click', () => {
     // 배너 셋팅
     setBanner('right');
   });
 
   // 배너 페이지네이션 클릭 이벤트
-  let btnPagination = document.querySelectorAll('.banner__pagination ul li');
+  const btnPagination = document.querySelectorAll('.banner__pagination ul li');
   btnPagination.forEach((item, idx) => {
     item.addEventListener('click', () => {
       // 배너 셋팅
@@ -49,40 +49,55 @@ window.onload = () => {
   });
 
   // just-1day 지난시간 퍼센트 계산 후 보여주기
-  let percent = Math.floor((new Date().getHours() / 24) * 100);
+  const percent = Math.floor((new Date().getHours() / 24) * 100);
   document.querySelector('.timeline span').style.width = `${percent}%`;
 
   // just-1day 남은시간 계산 1초마다 반복
   setInterval(setCountdown, 100);
 
   // cart-item 탭 마우스 오버 이벤트
-  let cartItemTab = document.querySelectorAll('.cart-item .tab-list li a');
-  cartItemTab.forEach((item, idx) => {
+  const cartItemTab = document.querySelectorAll('.cart-item .tab-list li a');
+  cartItemTab.forEach((item) => {
     item.addEventListener('mouseover', () => {
       // 탭 리스트 active toggle
-      document.querySelectorAll(`.cart-item .tab-list li`).forEach((item, idx) => {
+      document.querySelectorAll(`.cart-item .tab-list li`).forEach((item) => {
         item.classList.toggle('active');
       });
       // 탭 아이템 active toggle
-      document.querySelectorAll(`.cart-item .tab-container > div`).forEach((item, idx) => {
+      document.querySelectorAll(`.cart-item .tab-container > div`).forEach((item) => {
         item.classList.toggle('active');
       });
     });
   });
 
   // only-brand 탭 마우스 오버 이벤트
-  let onlyBrandTab = document.querySelectorAll('.only-brand .tab-list li a');
-  onlyBrandTab.forEach((item, idx) => {
+  const onlyBrandTab = document.querySelectorAll('.only-brand .tab-list li a');
+  onlyBrandTab.forEach((item) => {
     item.addEventListener('mouseover', () => {
       // 탭 리스트 active toggle
-      document.querySelectorAll(`.only-brand .tab-list li`).forEach((item, idx) => {
+      document.querySelectorAll(`.only-brand .tab-list li`).forEach((item) => {
         item.classList.toggle('active');
       });
       // 탭 아이템 active toggle
-      document.querySelectorAll(`.only-brand .left__items`).forEach((item, idx) => {
+      document.querySelectorAll(`.only-brand .left__items`).forEach((item) => {
         item.classList.toggle('active');
       });
     });
+  });
+
+  // 플로팅 배너 닫기버튼 마우스 오버 이벤트
+  const floatClose = document.querySelector('.diary2023_float .float-close');
+  floatClose.addEventListener('mouseover', () => {
+    document.querySelector('.diary2023_float .float-close__7day').classList.add('active');
+  });
+  floatClose.addEventListener('mouseleave', () => {
+    document.querySelector('.diary2023_float .float-close__7day').classList.remove('active');
+  });
+
+  // 우측 하단 TOP 버튼 클릭 시 화면 최상단으로 스크롤 이벤트
+  const topBtn = document.querySelector('.footer .go-top');
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 };
 
