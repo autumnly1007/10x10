@@ -4,16 +4,42 @@ let bannerIdx = 1;
 window.onload = () => {
   // 배너 초기화
   bannerData.forEach((item, idx) => {
-    let bannerImg = document.querySelector(`.banner__img:nth-child(${idx + 1})`);
-    let bannerTitle = document.querySelector(`.banner__img:nth-child(${idx + 1}) .banner__title p`);
-    let bannerDesc = document.querySelector(`.banner__img:nth-child(${idx + 1}) .banner__desc`);
-    let bannerLeft = document.querySelector(`.banner__img:nth-child(${idx + 1}) .banner__left`);
-    let bannerRight = document.querySelector(`.banner__img:nth-child(${idx + 1}) .banner__right`);
-    bannerImg.style.backgroundImage = `url(${bannerData[idx].url})`;
-    bannerTitle.innerHTML = bannerData[idx].title;
-    bannerDesc.innerHTML = bannerData[idx].desc;
-    bannerLeft.style.backgroundColor = bannerData[idx].leftColor;
-    bannerRight.style.backgroundColor = bannerData[idx].rightColor;
+    const bannerImg = document.createElement('div');
+    bannerImg.className = 'banner__img';
+    bannerImg.style.backgroundImage = `url(${item.url})`;
+
+    const aTag = document.createElement('a');
+    aTag.href = 'javascript:void(0);';
+
+    const bannerText = document.createElement('div');
+    bannerText.className = 'banner__txt';
+
+    const bannerTitle = document.createElement('div');
+    bannerTitle.className = 'banner__title';
+    bannerTitle.innerHTML = item.title;
+
+    const bannerDesc = document.createElement('p');
+    bannerDesc.className = 'banner__desc';
+    bannerDesc.innerHTML = item.desc;
+
+    const bannerLeft = document.createElement('div');
+    bannerLeft.className = 'banner__left';
+    bannerLeft.style.backgroundColor = item.leftColor;
+
+    const bannerRight = document.createElement('div');
+    bannerRight.className = 'banner__right';
+    bannerRight.style.backgroundColor = item.rightColor;
+
+    bannerText.append(bannerTitle);
+    bannerText.append(bannerDesc);
+
+    aTag.append(bannerText);
+
+    bannerImg.append(aTag);
+    bannerImg.append(bannerLeft);
+    bannerImg.append(bannerRight);
+
+    document.querySelector('.banner__inner').append(bannerImg);
   });
 
   // Pagination 초기화
@@ -48,12 +74,45 @@ window.onload = () => {
     });
   });
 
+  // gnb 마우스 오버 시 lng 보여주기
+  const gnbMenu = document.querySelectorAll('.nav__gnb ul li.menu');
+  gnbMenu.forEach((menu, idx) => {
+    menu.addEventListener('mouseover', () => {
+      document.querySelector(`.nav__lnb .lnb__category:nth-child(${idx + 1})`).classList.add('active');
+    });
+    menu.addEventListener('mouseleave', () => {
+      document.querySelector(`.nav__lnb .lnb__category:nth-child(${idx + 1})`).classList.remove('active');
+    });
+  });
+
+  // lng 마우스 오버 시 보여주기 유지
+  const lnbMenu = document.querySelectorAll('.nav__lnb .lnb__category');
+  lnbMenu.forEach((menu, idx) => {
+    menu.addEventListener('mouseover', () => {
+      document.querySelector(`.nav__lnb .lnb__category:nth-child(${idx + 1})`).classList.add('active');
+    });
+    menu.addEventListener('mouseleave', () => {
+      document.querySelector(`.nav__lnb .lnb__category:nth-child(${idx + 1})`).classList.remove('active');
+    });
+  });
+
   // just-1day 지난시간 퍼센트 계산 후 보여주기
   const percent = Math.floor((new Date().getHours() / 24) * 100);
   document.querySelector('.timeline span').style.width = `${percent}%`;
 
   // just-1day 남은시간 계산 1초마다 반복
   setInterval(setCountdown, 100);
+
+  // look-book 마우스 오버 시 애니메이션 정지
+  const lookBook = document.querySelector('.look-book__list');
+  lookBook.addEventListener('mouseover', () => {
+    document.querySelector('.look-book__list ul.original').classList.add('pause');
+    document.querySelector('.look-book__list ul.clone').classList.add('pause');
+  });
+  lookBook.addEventListener('mouseleave', () => {
+    document.querySelector('.look-book__list ul.original').classList.remove('pause');
+    document.querySelector('.look-book__list ul.clone').classList.remove('pause');
+  });
 
   // cart-item 탭 마우스 오버 이벤트
   const cartItemTab = document.querySelectorAll('.cart-item .tab-list li a');
@@ -99,6 +158,23 @@ window.onload = () => {
   topBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // look-book 리스트 아이템 마우스 오버 이벤트
+  const lookBookList = document.querySelectorAll('.look-book .look-book__list ul');
+  lookBookList.forEach((ul, ulIdx) => {
+    [...ul.children].forEach((li, liIdx) => {
+      li.addEventListener('mouseover', () => {
+        document
+          .querySelector(`.look-book .look-book__list ul:nth-child(${ulIdx + 1}) li:nth-child(${liIdx + 1}) .look-book__image a p span`)
+          .classList.add('active');
+      });
+      li.addEventListener('mouseleave', () => {
+        document
+          .querySelector(`.look-book .look-book__list ul:nth-child(${ulIdx + 1}) li:nth-child(${liIdx + 1}) .look-book__image a p span`)
+          .classList.remove('active');
+      });
+    });
+  });
 };
 
 // 배너 셋팅하기
@@ -106,24 +182,27 @@ function setBanner(type, idx) {
   document.querySelector(`.banner__img:nth-child(${bannerIdx}`).classList.add('hide');
   document.querySelector(`.banner__img:nth-child(${bannerIdx}`).classList.remove('show');
 
-  // 오른쪽 배너가 보이도록 설정
-  if (type === 'right') {
-    if (bannerIdx === bannerData.length) {
-      bannerIdx = 0;
-    }
-    bannerIdx++;
-
+  switch (type) {
+    // 오른쪽 배너가 보이도록 설정
+    case 'right':
+      if (bannerIdx === bannerData.length) {
+        bannerIdx = 0;
+      }
+      bannerIdx++;
+      break;
     // 왼쪽 배너가 보이도록 설정
-  } else if (type === 'left') {
-    if (bannerIdx === 1) {
-      bannerIdx = 10;
-    }
-    bannerIdx--;
-
+    case 'left':
+      if (bannerIdx === 1) {
+        bannerIdx = 10;
+      }
+      bannerIdx--;
+      break;
     // 선택한 페이지네이션 배너가 보이도록 설정
-  } else if (type === 'pagination') {
-    bannerIdx = idx + 1;
+    case 'pagination':
+      bannerIdx = idx + 1;
+      break;
   }
+
   document.querySelector(`.banner__img:nth-child(${bannerIdx}`).classList.add('show');
   document.querySelector(`.banner__img:nth-child(${bannerIdx}`).classList.remove('hide');
 

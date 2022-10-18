@@ -1,0 +1,66 @@
+// 배너 데이터
+const bannerData = [
+  {
+    url: `/imgs/main-banner/main-banner-1.jpg`,
+    title: `life is BUTTERful <br />버터샵 신규입점<span class="banner__label--sale"><b>~24%</b></span>`,
+    desc: `일상에 작은 행복을 더해주는 버터샵, 런칭 혜택을 텐바이텐에서 만나보세요!`,
+    leftColor: `#c0e0c4`,
+    rightColor: `#b4d9bb`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-2.jpg`,
+    title: `<p>텐텐다꾸 득TEN데이<br>아이코닉<span class="banner__label--sale"><b>~28%</b></span> <span class="banner__label--coupon"><b>쿠폰 20%</b></span></p>`,
+    desc: `뜻밖의 득템! 오늘의 메인 상품 구매하고 사은품도 받자!`,
+    leftColor: `#e3dcde`,
+    rightColor: `#e3dcde`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-3.jpg`,
+    title: ``,
+    desc: ``,
+    leftColor: `#ffa5c6`,
+    rightColor: `#ffa5c6`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-4.jpg`,
+    title: ``,
+    desc: ``,
+    leftColor: `#f7f7f5`,
+    rightColor: `#f7f7f5`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-5.jpg`,
+    title: `<p>아날로그 말고 편리한<br>디지털문구<span class="banner__label--sale"><b>~60%</b></span> <span class="banner__label--coupon"><b>쿠폰 30%</b></span></p>`,
+    desc: `써도 써도 모자란 널 위해 준비했어! 굿노트 &amp; 스티커`,
+    leftColor: `#434243`,
+    rightColor: `#434243`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-6.jpg`,
+    title: `<p>가을에 더 필요한<br>라이프썸 7일 특가<span class="banner__label--sale"><b>~90%</b></span></p>`,
+    desc: `가까이에서 함께하면 더욱 편리해지는 라이프썸`,
+    leftColor: `#fbb051`,
+    rightColor: `#fbb051`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-7.jpg`,
+    title: `<p>필드 위 빛나는 존재감<br>산리오 골프클럽</p>`,
+    desc: `즐거운 골프 생활을 응원하며 추가 할인 쿠폰을 드려요!`,
+    leftColor: `#4b9cd4`,
+    rightColor: `#4b9cd4`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-8.jpg`,
+    title: `<p>10월의 커피 그리고 티<br>프릳츠&amp;녹차원<span class="banner__label--sale"><b>~37%</b></span> <span class="banner__label--coupon"><b>쿠폰 25%</b></span></p>`,
+    desc: `바쁜 하루, 텐바이텐에서 추천하는 차 한잔으로 여유 즐기기`,
+    leftColor: `#a57b5e`,
+    rightColor: `#a57b5e`,
+  },
+  {
+    url: `/imgs/main-banner/main-banner-9.jpg`,
+    title: `<p>텐텐아, 생일축하해<br>궈니 BRD 피규어 <span class="banner__label--sale"><b>~10%</b></span> <span class="banner__label--coupon"><b>쿠폰 10%</b></span>`,
+    desc: `21주년 맞이, 텐텐단독 궈니 Birthday 피규어를 만나보세요`,
+    leftColor: `#fecb4c`,
+    rightColor: `#fecb4c`,
+  },
+];
