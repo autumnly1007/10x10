@@ -1987,6 +1987,7 @@ b {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  position: relative;
 }
 
 .footer__info .inner {
@@ -2105,7 +2106,7 @@ b {
 
 .footer .go-top {
   position: fixed;
-  right: 5%;
+  margin-right: -1290px;
   bottom: 60px;
   z-index: 10;
   width: 50px;
