@@ -193,7 +193,7 @@ function setBanner(type, idx) {
     // 왼쪽 배너가 보이도록 설정
     case 'left':
       if (bannerIdx === 1) {
-        bannerIdx = 10;
+        bannerIdx = bannerData.length + 1;
       }
       bannerIdx--;
       break;
